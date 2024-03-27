@@ -18,6 +18,10 @@ const exampleLinks = [
     href: "/user",
     text: "Complex Example - User",
   },
+  {
+    href: "/async-atom",
+    text: "Async Atom Example - Post",
+  },
 ];
 
 export default function AppNavigation({}: Props) {

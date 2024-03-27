@@ -1,15 +1,17 @@
 "use client";
 
-import { postsAtom } from "@/atoms/user-atom";
-import { useAtomValue } from "jotai";
+import { Post } from "@/atoms/user-atom";
 import PostCard from "../post-card";
+import Header from "./header";
 
-function Posts() {
-  const posts = useAtomValue(postsAtom);
+type Props = {
+  posts: Post[];
+};
 
+function AsyncPostList({ posts }: Props) {
   return (
     <div className="flex flex-col items-center space-y-4 max-w-2xl">
-      <h1>Posts</h1>
+      <Header />
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
@@ -17,4 +19,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export default AsyncPostList;
